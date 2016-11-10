@@ -11,10 +11,10 @@ class Nabeatsu_Number() :
         self.number = str(number)
 
     def __str__(self) :
-        if(not self.is_integer()) :
-            return self.NOT_NUMBER
-        else :
+        if(self.is_integer()) :
             return self.STR_DIC[(self.is_divisibility_by_base_number(), self.is_contains_base_number())]
+        else :
+            return self.NOT_NUMBER
 
     def is_divisibility_by_base_number(self) :
         _number = int(self.number)
@@ -30,4 +30,4 @@ class Nabeatsu_Number() :
 
 def main(argv):
     for v in argv :
-        print(Nabeatsu_Number(v))
+        print(str(Nabeatsu_Number(v)))
